@@ -11,9 +11,9 @@ import report.jasper.MyJasperReport;
 public class Order_detail  extends MyJasperReport{
 	
 	List<Order_detailData> orderDetails=new ArrayList<Order_detailData>();
-	
-	@Override
-	public void setJasperName() {
+		
+	public Order_detail() {
+		super();
 		jasperName = Jasper_Name.Order_detail.toString();
 	}
 	

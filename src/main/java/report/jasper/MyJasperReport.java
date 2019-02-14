@@ -22,9 +22,6 @@ public class MyJasperReport {
 	
 	protected String jasperName;
 	
-	protected void setJasperName() {
-
-	}
 
 	protected void loadData() {
         //
@@ -64,7 +61,6 @@ public class MyJasperReport {
 
 	public void generateReport() {
 		try {
-			setJasperName();
 			JasperPrint jasperPrint = null;
 
 			// ireport已經編譯成jasper檔，程式只需產生JasperPrint物件再匯出文件

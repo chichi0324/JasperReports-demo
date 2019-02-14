@@ -12,11 +12,10 @@ public class Order extends MyJasperReport{
 	
 	Order_detail order_detail=new Order_detail();
 	OrderDTO mainDTO=new OrderDTO();
-
-	@Override
-	public void setJasperName() {
+	
+	public Order() {
+		super();
 		jasperName = Jasper_Name.Order.toString();
-		order_detail.setJasperName();
 	}
 	
 	public OrderDTO getMainDTO() {

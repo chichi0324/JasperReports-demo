@@ -13,9 +13,10 @@ public class Vote extends MyJasperReport{
 	
 	VoteDTO mainDTO=new VoteDTO();	
 
-	@Override
-	public void setJasperName() {
+	public Vote() {
+		super();
 		jasperName = Jasper_Name.Vote.toString();
+
 	}
 
 	public VoteDTO getMainDTO() {
