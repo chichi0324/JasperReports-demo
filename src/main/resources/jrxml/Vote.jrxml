@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Vote" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c372117-7ca1-43ab-b809-6153037a29c7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from t_blog;]]>
+	</queryString>
+	<field name="no" class="java.math.BigDecimal"/>
+	<field name="count" class="java.math.BigDecimal"/>
+	<field name="name" class="java.lang.String"/>
+	<variable name="variable1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="20" forecolor="#FF0000" uuid="7ef36f15-b304-4bf4-ace7-1f26b85636b0"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[標題]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="155" y="6" width="206" height="30" uuid="17c5f2ca-fd57-4184-b14b-443f11a7fb36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="20" forecolor="#FF0000" uuid="cdf244c1-fa62-4a79-870a-4d7b6a3bb676"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[頁首]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="60" height="20" forecolor="#FF0000" uuid="c70f8956-ef30-4c6f-8d59-8c907b55e5a1"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[表頭]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="343" y="5" width="127" height="46" uuid="05f08c44-7552-4544-ba08-d8a5ab2119cf"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="216" y="5" width="127" height="46" uuid="90e45786-e928-4e33-aae8-bb12805e1cca"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="89" y="5" width="127" height="46" uuid="50241955-877b-4494-a4df-4e33d4009c05"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="89" y="5" width="127" height="46" uuid="9dd904dc-5a71-4f3a-8a2e-3dd6523e99e7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="18"/>
+				</textElement>
+				<text><![CDATA[編號]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="5" width="127" height="46" uuid="bab6c138-7701-484f-96f6-d1f442ab0d30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="18"/>
+				</textElement>
+				<text><![CDATA[候選人]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="5" width="127" height="46" uuid="a2541f5b-f4ed-4605-9e43-d12d73b95a07"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="18"/>
+				</textElement>
+				<text><![CDATA[票數]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="75" height="20" forecolor="#FF0000" uuid="75cd9adf-1df6-4404-b660-93b77a27fe42"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[主要內容]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="89" y="0" width="127" height="46" uuid="018bd12f-effd-428b-a2c2-367c4c62fdaf"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="216" y="0" width="127" height="46" uuid="86dc5a4c-ed7e-4bc4-85b3-409e2ae08034"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="343" y="0" width="127" height="46" uuid="b80c6fa2-4b3b-4751-b732-435d2c384071"/>
+			</rectangle>
+			<textField>
+				<reportElement x="89" y="0" width="127" height="46" uuid="5fc68a7a-3d26-4d6d-b563-d4f18d2cfe67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="0" width="127" height="46" uuid="b15a133f-802d-41f4-b99e-a65570d5a1ef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="0" width="127" height="46" uuid="489e219b-7f88-4ad0-a19a-55d917cf5e8b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="75" height="20" forecolor="#FF0000" uuid="f27814e1-9517-47a1-a38b-e965e6de2d3f"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[相當為表尾]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="75" height="20" forecolor="#FF0000" uuid="1d2634f4-48b0-4ec1-9ce3-913c3b6388ec"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[頁尾]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="75" height="20" forecolor="#FF0000" uuid="a9483306-643d-41f6-b4f1-6a04bfd5b877"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[放一些統計訊息]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
