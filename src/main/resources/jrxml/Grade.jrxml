@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Grade" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c372117-7ca1-43ab-b809-6153037a29c7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from t_blog;]]>
+	</queryString>
+	<field name="className" class="java.lang.String"/>
+	<field name="grade" class="java.math.BigDecimal"/>
+	<field name="name" class="java.lang.String"/>
+	<variable name="grade_Sum" class="java.math.BigDecimal" resetType="Group" resetGroup="Group_grade" calculation="Sum">
+		<variableExpression><![CDATA[$F{grade}]]></variableExpression>
+	</variable>
+	<variable name="grade_Ave" class="java.math.BigDecimal" resetType="Group" resetGroup="Group_grade" calculation="Average">
+		<variableExpression><![CDATA[$F{grade}]]></variableExpression>
+	</variable>
+	<group name="Group_grade" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{className}]]></groupExpression>
+		<groupHeader>
+			<band height="101">
+				<staticText>
+					<reportElement x="89" y="66" width="127" height="30" uuid="9dd904dc-5a71-4f3a-8a2e-3dd6523e99e7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="kaiu" size="18" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[班級]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="216" y="66" width="127" height="30" uuid="bab6c138-7701-484f-96f6-d1f442ab0d30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="kaiu" size="18" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[姓名]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="343" y="66" width="127" height="30" uuid="a2541f5b-f4ed-4605-9e43-d12d73b95a07"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="kaiu" size="18" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[分數]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="0" width="127" height="46" uuid="c882617a-5f09-44d7-9fa0-01878b3ea673"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="kaiu" size="16"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{className}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="89" y="98" width="381" height="1" uuid="db6158a6-f899-4e91-acb7-d663259d8a8e"/>
+					<graphicElement>
+						<pen lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="68">
+				<textField pattern="#,##0" isBlankWhenNull="true">
+					<reportElement x="173" y="2" width="105" height="38" uuid="268f3407-c4c4-4948-8874-37f5fccf7143"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="kaiu" size="15"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{grade_Sum}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="89" y="2" width="84" height="38" uuid="6c5fa92d-fb66-44c9-9199-683a2b5800da"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="kaiu" size="15"/>
+					</textElement>
+					<text><![CDATA[分數加總：]]></text>
+				</staticText>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement x="361" y="2" width="109" height="38" uuid="2246f4bc-57f2-4623-9ba8-02fd470dfec2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="kaiu" size="15"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{grade_Ave}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="278" y="2" width="83" height="38" uuid="633dbf08-999a-4b45-b2ee-e4bf03cc7c9a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="kaiu" size="15"/>
+					</textElement>
+					<text><![CDATA[分數平均：]]></text>
+				</staticText>
+				<line>
+					<reportElement x="89" y="2" width="381" height="1" uuid="ce0bef55-304f-491a-9375-1ae5ec331cca"/>
+					<graphicElement>
+						<pen lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="20" forecolor="#FF0000" uuid="7ef36f15-b304-4bf4-ace7-1f26b85636b0"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[標題]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="155" y="6" width="206" height="30" uuid="17c5f2ca-fd57-4184-b14b-443f11a7fb36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="75" height="20" forecolor="#FF0000" uuid="75cd9adf-1df6-4404-b660-93b77a27fe42"/>
+				<textElement textAlignment="Center">
+					<font fontName="kaiu" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[主要內容]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="89" y="0" width="127" height="46" uuid="5fc68a7a-3d26-4d6d-b563-d4f18d2cfe67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{className}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="216" y="0" width="127" height="46" uuid="b15a133f-802d-41f4-b99e-a65570d5a1ef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="343" y="0" width="127" height="46" uuid="489e219b-7f88-4ad0-a19a-55d917cf5e8b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="kaiu" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
