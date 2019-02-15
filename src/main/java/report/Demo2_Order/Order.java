@@ -1,4 +1,4 @@
-package report.Order;
+package report.Demo2_Order;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +8,10 @@ import java.util.Map;
 import report.jasper.Jasper_Name;
 import report.jasper.MyJasperReport;
 
+/**
+ * Report+SubReport
+ *
+ */
 public class Order extends MyJasperReport{
 	
 	Order_detail order_detail=new Order_detail();

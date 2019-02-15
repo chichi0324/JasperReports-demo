@@ -1,4 +1,4 @@
-package report.Vote;
+package report.Demo1_Vote;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -8,7 +8,10 @@ import java.util.Map;
 
 import report.jasper.Jasper_Name;
 import report.jasper.MyJasperReport;
-
+/**
+ * Report
+ *
+ */
 public class Vote extends MyJasperReport{
 	
 	VoteDTO mainDTO=new VoteDTO();	

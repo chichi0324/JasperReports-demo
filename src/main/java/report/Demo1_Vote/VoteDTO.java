@@ -1,4 +1,4 @@
-package report.Vote;
+package report.Demo1_Vote;
 
 import java.util.ArrayList;
 import java.util.List;
